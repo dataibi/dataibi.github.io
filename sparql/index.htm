@@ -120,9 +120,9 @@
 					<section>
 						<div style="background-color: #E6B0AA; color: white; font-size: 14pt; text-align: left; padding: .25em">
 							<code>
-								PREFIX dbr:&lt;http://dbpedia.org/resource/&gt;
+								PREFIX dbr:&lt;http://dbpedia.org/resource/&gt;<br/>
 								
-								PREFIX dbo:&lt;http://dbpedia.org/ontology/&gt;
+								PREFIX dbo:&lt;http://dbpedia.org/ontology/&gt;<br/>
 								
 								dbr:Pluto dbo:discovered “1930” .  <br />
 								dbr:Pluto dbo:discoverer dbr:Clyde_Tombaugh; .
@@ -133,10 +133,10 @@
 						<h3>RDF Graph</h3>
 						<div style="background-color: #E6B0AA; color: white; font-size: 14pt; text-align: left; padding: .25em">
 							<code>
-							PREFIX dbpedia:&lt;http://dbpedia.org/resource/&gt;
-							PREFIX dbo:&lt;http://dbpedia.org/ontology/&gt;	
-							PREFIX dbprop:&lt;http://dbpedia.org/property/&gt;
-							PREFIX rdf:&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;	
+							PREFIX dbpedia:&lt;http://dbpedia.org/resource/&gt;<br/>
+							PREFIX dbo:&lt;http://dbpedia.org/ontology/&gt;	<br/>
+							PREFIX dbprop:&lt;http://dbpedia.org/property/&gt;<br/>
+							PREFIX rdf:&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;	<br/>
 								
 							dbpedia:Venezuela rdf:type dbo:Country .<br/>
 							dbpedia:Venezuela dbo:capital dbpedia:Caracas .<br/>
@@ -154,17 +154,18 @@
 					</section>
 					<section>
 						
-						?a rdf:type dbo:Country .
+						?a rdf:type dbo:Country . <br/><br/>
 						
-						il ? indica una variabile "a" è il nome della variabile
+						il <i>?</i> indica una variabile 
+						<br /><i>"a"</i> è il nome della variabile
 					</section>
 					<section>
 						
-						?pippo rdf:type dbo:Country . <br/>
+						?pippo rdf:type dbo:Country . <br/><br/>
 						
-						?pluto rdf:type dbo:Country . <br/>
+						?pluto rdf:type dbo:Country . <br/><br/>
 						
-						?paperino rdf:type dbo:Country . <br/>
+						?paperino rdf:type dbo:Country . <br/><br/>
 						
 					</section>
 					<section>
@@ -187,7 +188,8 @@
 							dbpedia:Germany dbo:language “German“ .<br/>
 							</code>
 						</div>
-						?nazione è variabile -> libero -> non vincolato a nulla
+						<br/>
+						?nazione è variabile -> libero -> non vincolato a nulla<br/>
 				
 						rdf:type dbo:Country è fisso
 				
@@ -214,6 +216,12 @@
 					</section>
 				</section>
 				
+				
+				<section>
+					<section>
+						<h3>Query Semplici</h3>
+					</section>
+				</section>
 				<section class="slide level1">
 					<section>
 						<h3>Query Utili</h3>
@@ -228,11 +236,6 @@
 								}
 							</code>
 						</div>
-					</section>
-				</section>
-				<section>
-					<section>
-						<h3>Query Semplici</h3>
 					</section>
 				</section>
 				<section>
