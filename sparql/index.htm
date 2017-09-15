@@ -243,6 +243,35 @@
 						<h3>Complichiamo un po' le cose</h3>
 					</section>
 					<section>
+						SELECT DISTINCT ?city ?cityLabel ?mayor ?mayorLabel WHERE {
+?city wdt:P31/wdt:P279* wd:Q515 . # find instances of subclasses of city
+ 
+ 
+ 
+ 
+ 
+ ?city p:P6 ?statement .
+?statement ps:P6 ?mayor .
+?mayor wdt:P21 wd:Q6581072 .
+FILTER NOT EXISTS { ?statement pq:P582 ?x } # but statement has no end date qualifier # Now select the population value of the ?city
+# (wdt: properties use only statements of "preferred" rank if any, meaning "current")
+?city
+					</section>
+					<section>
+						Q64 wdt:P625 ?berlinLoc . # Berlin coordinates SERVICE wikibase:around {
+?place wdt:P625 ?location .
+bd:serviceParam wikibase:center ?berlinLoc . bd:serviceParam wikibase:radius "100" . bd:serviceParam wikibase:distance ?dist.
+}
+?place wdt:P31/wdt:P279* wd:Q1248784 . # Is an airport } ORDER BY ASC(?dist)
+ 
+					</section>
+					<section>
+						SELECT ?item ?itemLabel ?billions 
+						WHERE { ?item wdt:P2218 ?worth. FILTER(?worth>1000000000). 
+						BIND(?worth/1000000000 AS ?billions). 
+						SERVICE wikibase:label {
+							bd:serviceParam wikibase:language "en". }}
+						ORDER BY DESC(?billions)
 					</section>
 				</section>
 			</div>
