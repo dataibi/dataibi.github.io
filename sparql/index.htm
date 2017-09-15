@@ -77,7 +77,7 @@
 					<section>
 						<p>Quindi? dove trovo SPARQL endpoint?</p>
 						<ul>
-							<li><a href="http://lod-cloud.net">http://lod-cloud.net</a></li>		
+							<li><a href="http://lod-cloud.net" target="_blank">http://lod-cloud.net</a></li>		
 							<li>LOD datasets su DataHub: <br />https://datahub.io/organization/lodcloud</li>
 							<li>SPARQLES <br /><a href="http://sparqles.ai.wu.ac.at/" target="_blank">http://sparqles.ai.wu.ac.at/</a></li> 
 						</ul>
@@ -122,7 +122,7 @@
 							<code>
 								PREFIX dbr:&lt;http://dbpedia.org/resource/&gt;<br/>
 								
-								PREFIX dbo:&lt;http://dbpedia.org/ontology/&gt;<br/>
+								PREFIX dbo:&lt;http://dbpedia.org/ontology/&gt;<br/><br/>
 								
 								dbr:Pluto dbo:discovered “1930” .  <br />
 								dbr:Pluto dbo:discoverer dbr:Clyde_Tombaugh; .
@@ -136,7 +136,7 @@
 							PREFIX dbpedia:&lt;http://dbpedia.org/resource/&gt;<br/>
 							PREFIX dbo:&lt;http://dbpedia.org/ontology/&gt;	<br/>
 							PREFIX dbprop:&lt;http://dbpedia.org/property/&gt;<br/>
-							PREFIX rdf:&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;	<br/>
+							PREFIX rdf:&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;	<br/><br/>
 								
 							dbpedia:Venezuela rdf:type dbo:Country .<br/>
 							dbpedia:Venezuela dbo:capital dbpedia:Caracas .<br/>
@@ -195,6 +195,30 @@
 				
 					</section>
 					<section>
+						?nazione rdf:type dbo:Country .
+						
+						<div style="background-color: #E6B0AA; color: white; font-size: 14pt; text-align: left; padding: .25em">
+							<code>
+							dbpedia:Venezuela rdf:type dbo:Country .<br/>
+							dbpedia:Venezuela dbo:capital dbpedia:Caracas .<br/>
+							dbpedia:Venezuela dbo:language “Spanish“ .<br/>
+							dbpedia:Venezuela dbp:currencyCode "VEF" .</br>
+							dbpedia:Germany rdf:type dbo:Country .<br/>
+							dbpedia:Germany dbo:capital “Berlin“ .<br/>
+							dbpedia:Germany dbo:language “German“ .<br/>
+							</code>
+						</div>
+						<br/>
+						dbpedia:Venezuela<br />
+						dbpedia:Germany<br />
+			
+						o meglio
+			
+						&lt;http://dbpedia.org/resource/Venezuela&gt;<br/>
+						&lt;http://dbpedia.org/resource/Germany&gt;<br/>
+				
+					</section>
+					<section>
 						<h4>Struttura query SPARQL</h4>
 						<div style="background-color: #E6B0AA; color: white; font-size: 14pt; text-align: left; padding: .25em">
 							<code>
@@ -220,6 +244,18 @@
 				<section>
 					<section>
 						<h3>Query Semplici</h3>
+					</section>
+					<section>
+						<h3>Query su DBpedia</h3>
+						<a href="http://dbpedia.org/sparql" target="_blank">http://dbpedia.org/sparql</a>
+					</section>
+					<section>
+						<h3>Query su LinkedGeoData</h3>
+						<a href="http://linkedgeodata.org/sparql" target="_blank">http://linkedgeodata.org/sparql</a>
+					</section>
+					<section>
+						<h3>Query su ISTAT</h3>
+						<a href="http://datiopen.istat.it/sparqlIstat.php" target="_blank">http://datiopen.istat.it/sparqlIstat.php</a>
 					</section>
 				</section>
 				<section class="slide level1">
