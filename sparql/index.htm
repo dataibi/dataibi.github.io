@@ -15,12 +15,12 @@
 					</section>
 					<section>
 						<div style="align-left">
-							<span style="font-size: 36pt;">S</span>PARQL<br />
-							<span style="font-size: 36pt;">P</span>rotocol<br />
-							<span style="font-size: 36pt;">A</span>nd<br />
-							<span style="font-size: 36pt;">R</span>DF<br />
-							<span style="font-size: 36pt;">Q</span>uery<br />
-							<span style="font-size: 36pt;">L</span>anguage<br />
+							<span style="font-size: 42pt;">S</span>PARQL<br />
+							<span style="font-size: 42pt;">P</span>rotocol<br />
+							<span style="font-size: 42pt;">A</span>nd<br />
+							<span style="font-size: 42pt;">R</span>DF<br />
+							<span style="font-size: 42pt;">Q</span>uery<br />
+							<span style="font-size: 42pt;">L</span>anguage<br />
 						</div>
 					</section>
 					<section>
@@ -53,7 +53,7 @@
 					</section>
 					<section>
 						<h4>Ma anche</h4>
-						<p>http://dati.camera.it/sparql</p>
+						<p><a href="http://dati.camera.it/sparql">http://dati.camera.it/sparql</a></p>
 						<p>http://dati.culturaitalia.it</p>
 						<p>http://data.cnr.it/sparql</p>
 						<p>http://public-contracts.nexacenter.org</p>
@@ -63,7 +63,7 @@
 					<section>
 						<p>Quindi? dove trovo SPARQL endpoint?</p>
 						<ul>
-							<li>http://lod-cloud.net</li>		
+							<li><a href="http://lod-cloud.net">http://lod-cloud.net</a></li>		
 							<li>LOD datasets su DataHub: https://datahub.io/organization/lodcloud</li>
 							<li>SPARQLES http://sparqles.ai.wu.ac.at/</li> 
 						</ul>
@@ -128,7 +128,20 @@
 				</section>
 				
 				<section class="slide level1">
-					slide sotto 2
+					<section>
+						<h3>Query Utili</h3>
+					</section>
+					<section>
+						<h3>Chiedere a uno SPARQL Endpoint quali RDF Graphs sono disponibili</h3>
+						<div style="background-color: #E6B0AA; color: white; font-size: 14pt; text-align: left; padding: .25em">
+							<code>
+								SELECT DISTINCT ?g
+								WHERE {
+									GRAPH ?g { ?s ?p ?o . }
+								}
+							</code>
+						</div>
+					</section>
 				</section>
 				<section>Slide 2</section>
 				<section>Slide 2</section>
