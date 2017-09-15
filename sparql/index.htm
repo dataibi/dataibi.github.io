@@ -15,12 +15,12 @@
 					</section>
 					<section>
 						<div style="align-left">
-							<span style="font-size: 48pt;">S</span>PARQL<br />
-							<span style="font-size: 48pt;">P</span>rotocol<br />
-							<span style="font-size: 48pt;">A</span>nd<br />
-							<span style="font-size: 48pt;">R</span>DF<br />
-							<span style="font-size: 48pt;">Q</span>uery<br />
-							<span style="font-size: 48pt;">L</span>anguage<br />
+							<span style="font-size: 52pt;">S</span>PARQL<br />
+							<span style="font-size: 52pt;">P</span>rotocol<br />
+							<span style="font-size: 52pt;">A</span>nd<br />
+							<span style="font-size: 52pt;">R</span>DF<br />
+							<span style="font-size: 52pt;">Q</span>uery<br />
+							<span style="font-size: 52pt;">L</span>anguage<br />
 						</div>
 					</section>
 					<section>
@@ -28,7 +28,8 @@
 						<ul>
 							<li>cURL — Curl URL Request Library</li>
 							<li>PHP — PHP: Hypertext Preprocesso</li>
-							<li>GNU's Not Unix</li>
+							<li>GNU - GNU's Not Unix</li>
+							<li>...</li>
 						</ul>
 						<a href="https://en.wikipedia.org/wiki/Recursive_acronym" target="_blank">Recursive Acronym</a>
 					</section>
@@ -79,26 +80,6 @@
 							<li>LOD datasets su DataHub: <br />https://datahub.io/organization/lodcloud</li>
 							<li>SPARQLES <br /><a href="http://sparqles.ai.wu.ac.at/" target="_blank">http://sparqles.ai.wu.ac.at/</a></li> 
 						</ul>
-					</section>
-					<section>
-						<h4>Struttura query SPARQL</h4>
-						<div style="background-color: #E6B0AA; color: white; font-size: 14pt; text-align: left; padding: .25em">
-							<code>
-								# dichiarazione dei prefissi<br />
-								PREFIX ex: &lt;http://example.com/resources/&gt;<br />
-								...<br />
-								# grafo da interrogare<br />
-								FROM ...<br />
-								# definizione delle variabili<br />
-								SELECT ...<br />
-								# query<br />
-								WHERE {<br />
-								    ...<br />
-								}<br />
-								# modificatori<br />
-								ORDER BY ...<br />
-							</code>
-						</div>
 					</section>
 				</section>
 				<section class="slide level1">
@@ -165,6 +146,70 @@
 							</code>
 						</div>
 					</section>
+					<section>
+						SPARQL è basato su c.d. <i>Pattern Matching</i><br />o meglio<br/>
+						<i>Graph Pattern Matching</i> 
+					</section>
+					<section>
+						
+						?a rdf:type dbo:Country .
+						
+						il ? indica una variabile "a" è il nome della variabile
+					</section>
+					<section>
+						
+						?pippo rdf:type dbo:Country . <br/>
+						
+						?pluto rdf:type dbo:Country . <br/>
+						
+						?paperino rdf:type dbo:Country . <br/>
+						
+					</section>
+					<section>
+						Forse meglio:
+						
+						?nazione rdf:type dbo:Country .
+						
+					</section>
+					<section>
+						?nazione rdf:type dbo:Country .
+						
+						<div style="background-color: #E6B0AA; color: white; font-size: 14pt; text-align: left; padding: .25em">
+							<code>
+							dbpedia:Venezuela rdf:type dbo:Country .<br/>
+							dbpedia:Venezuela dbo:capital dbpedia:Caracas .<br/>
+							dbpedia:Venezuela dbo:language “Spanish“ .<br/>
+							dbpedia:Venezuela dbp:currencyCode "VEF" .</br>
+							dbpedia:Germany rdf:type dbo:Country .<br/>
+							dbpedia:Germany dbo:capital “Berlin“ .<br/>
+							dbpedia:Germany dbo:language “German“ .<br/>
+							</code>
+						</div>
+						?nazione è variabile -> libero -> non vincolato a nulla
+				
+						rdf:type dbo:Country è fisso
+				
+					</section>
+					<section>
+						<h4>Struttura query SPARQL</h4>
+						<div style="background-color: #E6B0AA; color: white; font-size: 14pt; text-align: left; padding: .25em">
+							<code>
+								# dichiarazione dei prefissi<br />
+								PREFIX ex: &lt;http://example.com/resources/&gt;<br />
+								...<br />
+								# grafo da interrogare<br />
+								FROM ...<br />
+								# definizione delle variabili<br />
+								SELECT ...<br />
+								# query<br />
+								WHERE {<br />
+								    ...<br />
+								}<br />
+								# modificatori<br />
+								ORDER BY ...<br />
+							</code>
+						</div>
+					</section>
 				</section>
 				
 				<section class="slide level1">
@@ -183,8 +228,18 @@
 						</div>
 					</section>
 				</section>
-				<section>Slide 2</section>
-				<section>Slide 2</section>
+				<section>
+					<section>
+						<h3>Query Semplici</h3>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Complichiamo un po' le cose</h3>
+					</section>
+					<section>
+					</section>
+				</section>
 			</div>
 		</div>
 		<script src="js/reveal.js"></script>
