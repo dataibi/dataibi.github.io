@@ -15,12 +15,12 @@
 					</section>
 					<section>
 						<div style="align-left">
-							<span style="font-size: 42pt;">S</span>PARQL<br />
-							<span style="font-size: 42pt;">P</span>rotocol<br />
-							<span style="font-size: 42pt;">A</span>nd<br />
-							<span style="font-size: 42pt;">R</span>DF<br />
-							<span style="font-size: 42pt;">Q</span>uery<br />
-							<span style="font-size: 42pt;">L</span>anguage<br />
+							<span style="font-size: 48pt;">S</span>PARQL<br />
+							<span style="font-size: 48pt;">P</span>rotocol<br />
+							<span style="font-size: 48pt;">A</span>nd<br />
+							<span style="font-size: 48pt;">R</span>DF<br />
+							<span style="font-size: 48pt;">Q</span>uery<br />
+							<span style="font-size: 48pt;">L</span>anguage<br />
 						</div>
 					</section>
 					<section>
@@ -33,7 +33,10 @@
 						<a href="https://en.wikipedia.org/wiki/Recursive_acronym" target="_blank">Recursive Acronym</a>
 					</section>
 					<section>
-						<h3>SPARQL</h3><h3>Solo un linguaggio di Query?</h3>
+						<h3>SPARQL</h3>
+						<h3>Solo un linguaggio di Query?</h3>
+					</section>
+					<section>
 						<p>Un Linguaggio di Query per grafi RDF <br /><span style="font-size: 14pt;">(SPARQL Query Language Specification)</span></p>
 						<p>Un protocollo per usare SPARQL via http <br /><span style="font-size: 14pt;">(SPARQL Protocol for RDF Specification)</span></p>
 						<p>Un formato di Output XML per le query SPARQL <br /><span style="font-size: 14pt;">(SPARQL Query XML Results Format)</span></p>
@@ -73,8 +76,8 @@
 						<p>Quindi? dove trovo SPARQL endpoint?</p>
 						<ul>
 							<li><a href="http://lod-cloud.net">http://lod-cloud.net</a></li>		
-							<li>LOD datasets su DataHub: https://datahub.io/organization/lodcloud</li>
-							<li>SPARQLES http://sparqles.ai.wu.ac.at/</li> 
+							<li>LOD datasets su DataHub: <br />https://datahub.io/organization/lodcloud</li>
+							<li>SPARQLES <br /><a href="http://sparqles.ai.wu.ac.at/" target="_blank">http://sparqles.ai.wu.ac.at/</a></li> 
 						</ul>
 					</section>
 					<section>
@@ -127,8 +130,19 @@
 					<section>
 						<div style="background-color: #E6B0AA; color: white; font-size: 14pt; text-align: left; padding: .25em">
 							<code>
-						&lt;http://dbpedia.org/resource/Pluto&gt; &lt;http://dbpedia.org/ontology/discovered&gt; “1930” .
+						&lt;http://dbpedia.org/resource/Pluto&gt; &lt;http://dbpedia.org/ontology/discovered&gt; “1930” .  <br />
 						&lt;http://dbpedia.org/resource/Pluto&gt; &lt;http://dbpedia.org/ontology/discoverer&gt; &lt;http://dbpedia.org/resource/Clyde_Tombaugh&gt; .
+							</code>
+						</div>
+					</section>
+					<section>
+						<div style="background-color: #E6B0AA; color: white; font-size: 14pt; text-align: left; padding: .25em">
+							<code>
+								PREFIX dbr:&lt;http://dbpedia.org/resource/&gt;
+								PREFIX dbo:&lt;http://dbpedia.org/ontology/&gt;
+								
+								dbr:Pluto dbo:discovered “1930” .  <br />
+								dbr:Pluto dbo:discoverer dbr:Clyde_Tombaugh; .
 							</code>
 						</div>
 					</section>
@@ -136,12 +150,18 @@
 						<h3>RDF Graph</h3>
 						<div style="background-color: #E6B0AA; color: white; font-size: 14pt; text-align: left; padding: .25em">
 							<code>
+							PREFIX dbpedia:&lt;http://dbpedia.org/resource/&gt;
+							PREFIX dbo:&lt;http://dbpedia.org/ontology/&gt;	
+							PREFIX dbprop:&lt;http://dbpedia.org/property/&gt;
+							PREFIX rdf:&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;	
+								
 							dbpedia:Venezuela rdf:type dbo:Country .<br/>
 							dbpedia:Venezuela dbo:capital dbpedia:Caracas .<br/>
-							dbpedia:Venezuela dbprop:language “Spanish“ .<br/>
+							dbpedia:Venezuela dbo:language “Spanish“ .<br/>
+							dbpedia:Venezuela dbp:currencyCode "VEF" .</br>
 							dbpedia:Germany rdf:type dbo:Country .<br/>
 							dbpedia:Germany dbo:capital “Berlin“ .<br/>
-							dbpedia:Germany dbp:language “German“ .<br/>
+							dbpedia:Germany dbo:language “German“ .<br/>
 							</code>
 						</div>
 					</section>
