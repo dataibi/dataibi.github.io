@@ -255,7 +255,7 @@
 							PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; <br />
 							PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt; <br /><br />
 								
-							SELECT ?author  ?work <br />
+							SELECT ?author  <br />
 							WHERE { <br />
 							       ?author rdf:type dbo:Writer . <br />
 							} LIMIT 1000 <br />
@@ -268,7 +268,21 @@
 							PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; <br />
 							PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt; <br /><br />
 								
-							SELECT ?author   <br />
+							SELECT ?author ?work  <br />
+							WHERE { <br />
+							       ?author rdf:type dbo:Writer . <br />
+							       ?author dbo:notableWork ?work  <br />
+							} LIMIT 1000 <br />
+							</code>
+						</div>
+					</section>
+					<section>
+						<div style="background-color: #E6B0AA; color: white; font-size: 14pt; text-align: left; padding: .25em">
+							<code>
+							PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; <br />
+							PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt; <br /><br />
+								
+							SELECT ?author ?work  <br />
 							WHERE { <br />
 							       ?author rdf:type dbo:Writer . <br />
 							       OPTIONAL {?author dbo:notableWork ?work}  <br />
