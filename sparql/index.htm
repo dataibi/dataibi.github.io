@@ -250,6 +250,33 @@
 						<a href="http://dbpedia.org/sparql" target="_blank">http://dbpedia.org/sparql</a>
 					</section>
 					<section>
+						<div style="background-color: #E6B0AA; color: white; font-size: 14pt; text-align: left; padding: .25em">
+							<code>
+							PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; <br />
+							PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt; <br /><br />
+								
+							SELECT ?author  ?work <br />
+							WHERE { <br />
+							       ?author rdf:type dbo:Writer . <br />
+							} LIMIT 100 <br />
+							</code>
+						</div>
+					</section>
+					<section>
+						<div style="background-color: #E6B0AA; color: white; font-size: 14pt; text-align: left; padding: .25em">
+							<code>
+							PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; <br />
+							PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt; <br /><br />
+								
+							SELECT ?author   <br />
+							WHERE { <br />
+							       ?author rdf:type dbo:Writer . <br />
+							       OPTIONAL (?author dbo:notableWork ?work)  <br />
+							} LIMIT 100 <br />
+							</code>
+						</div>
+					</section>
+					<section>
 						<h3>Query su LinkedGeoData</h3>
 						<a href="http://linkedgeodata.org/sparql" target="_blank">http://linkedgeodata.org/sparql</a>
 					</section>
