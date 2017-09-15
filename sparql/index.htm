@@ -406,6 +406,53 @@ bd:serviceParam wikibase:center ?berlinLoc . bd:serviceParam wikibase:radius "10
 						ORDER BY DESC(?billions)
 					</section>
 				</section>
+				<section>
+					<section>
+						<h1>Applicazioni</h1>
+					</section>
+					<section>
+						<h1>Google spreadsheet</h1>	
+						
+					=IMPORTDATA("http://factforge.net/repositories/ff-news?query=%23+F4%3A+Top-lev
+el+industries+by+number+of+companies%0A%23+-+benefits+from+the+mapping+a
+nd+consolidation+of+industry+classifications%0A%23+++and+predicates+in+DBPedi
+a+done+in+the+FactForge%0A%23+-+benefits+from+reasoning+-+transitive+and+s
+ymmetric+properties+across%0A%23+++the+industry+classification+taxonomy+of+
+FactForge%0A%0APREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%
+2F%3E%0APREFIX+ff-map%3A+%3Chttp%3A%2F%2Ffactforge.net%2Fff2016-mappin
+g%2F%3E%0A%0ASELECT+DISTINCT+%3Ftop_industry+(COUNT(*)+AS+%3Fcount)
+%0A%7B%0A+++%3Fcompany+dbo%3Aindustry+%3Findustry+.%0A+++%3Findust
+ry+%5Eff-map%3AindustryVariant+%2F+ff-map%3AindustryCenter+%3Ftop_industry
++.%0A%7D%0AGROUP+BY+%3Ftop_industry+ORDER+BY+DESC(%3Fcount)+")
+					</section>
+					<section>
+						<h1>cURL</h1>
+						curl -H Accept:text/tab-separated-values
+"http://factforge.net/repositories/ff-news?infer=true&sameAs=false&query=PREFIX+dbo%3
+A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0ASELECT+%3Findustry+%7B%24company+dbo
+%3Aindustry+%3Findustry%7D%0A&$company=<http://dbpedia.org/resource/Google>"
+					</section>
+				</section>
+				<section>
+					<section>e tanto altro ancora...</section>
+					<section>
+					Spraklis
+					
+					http://www.irisa.fr/LIS/ferre/sparklis/
+						
+					http://www.irisa.fr/LIS/ferre/sparklis/osparklis.html?endpoint=http%3A//dbpedia.org/sparql&regexp_hidden_URIs=%5E%28http%3A//www.w3.org/2002/07/owl%23%7Chttp%3A//www.openlinksw.com/%7CnodeID%3A//%7C%23%7Chttp%3A//www.wikidata.org/%29
+					</section>
+					<section>
+						NLquery
+						http://nlquery.ayoungprogrammer.com/
+						
+						Hokudai
+						http://wnews.ist.hokudai.ac.jp/wc3?search=Songs+written+by+Paul+McCartney
+						
+						Quepy
+						http://quepy.machinalis.com/
+					</section>
+				</section>
 			</div>
 		</div>
 		<script src="js/reveal.js"></script>
