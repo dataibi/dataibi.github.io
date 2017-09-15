@@ -257,6 +257,44 @@
 						<h3>Query su ISTAT</h3>
 						<a href="http://datiopen.istat.it/sparqlIstat.php" target="_blank">http://datiopen.istat.it/sparqlIstat.php</a>
 					</section>
+					<section>
+						<i>lasciamo perdere....</i>
+					</section>
+					<section>
+						<h3>Query su Camera dei Deputati</h3>
+						<a href="http://dati.camera.it/sparql" target="_blank">http://dati.camera.it/sparql</a>
+					</section>
+					<section>
+						<h3>Tutte le legislature</h3>
+						SELECT ?leg WHERE {
+							?leg a ocd:legislatura
+						} 
+					</section>
+					<section>
+						<h3>Tutte le legislature per cui ci sono dati sulle votazioni</h3>
+						SELECT ?leg WHERE {
+							?votazione a ocd:votazione .
+							?votazione ocd:rif_leg ?leg
+						}
+					</section>
+					<section>
+						<h3>Tutte le legislature per cui ci sono dati sulle votazioni</h3>
+						SELECT distinct ?leg WHERE {
+							?votazione a ocd:votazione .
+							?votazione ocd:rif_leg ?leg
+						}
+					</section>
+					<section>
+						SELECT distinct * WHERE {
+							?votazione a ocd:votazione; 
+							dc:date ?data; 
+							dc:title ?denominazione; 
+							dc:description ?descrizione;
+							ocd:votanti ?votanti;
+							ocd:rif_leg <http://dati.camera.it/ocd/legislatura.rdf/repubblica_17>
+						} 
+						ORDER BY DESC(?data)
+						</section>
 				</section>
 				<section class="slide level1">
 					<section>
