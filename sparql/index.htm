@@ -258,7 +258,7 @@
 							SELECT ?author  ?work <br />
 							WHERE { <br />
 							       ?author rdf:type dbo:Writer . <br />
-							} LIMIT 100 <br />
+							} LIMIT 1000 <br />
 							</code>
 						</div>
 					</section>
@@ -271,8 +271,8 @@
 							SELECT ?author   <br />
 							WHERE { <br />
 							       ?author rdf:type dbo:Writer . <br />
-							       OPTIONAL (?author dbo:notableWork ?work)  <br />
-							} LIMIT 100 <br />
+							       OPTIONAL {?author dbo:notableWork ?work}  <br />
+							} LIMIT 1000 <br />
 							</code>
 						</div>
 					</section>
