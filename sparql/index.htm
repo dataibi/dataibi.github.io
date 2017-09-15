@@ -78,7 +78,7 @@
 						<p>Quindi? dove trovo SPARQL endpoint?</p>
 						<ul>
 							<li><a href="http://lod-cloud.net" target="_blank">http://lod-cloud.net</a></li>		
-							<li>LOD datasets su DataHub: <br />https://datahub.io/organization/lodcloud</li>
+							<li>LOD datasets su DataHub: <br /><a href="https://datahub.io/organization/lodcloud">https://datahub.io/organization/lodcloud</a></li>
 							<li>SPARQLES <br /><a href="http://sparqles.ai.wu.ac.at/" target="_blank">http://sparqles.ai.wu.ac.at/</a></li> 
 						</ul>
 					</section>
@@ -306,26 +306,40 @@
 						<a href="http://dati.camera.it/sparql" target="_blank">http://dati.camera.it/sparql</a>
 					</section>
 					<section>
+						<div style="background-color: #E6B0AA; color: white; font-size: 14pt; text-align: left; padding: .25em">
+							<code>
 						<h3>Tutte le legislature</h3>
 						SELECT ?leg WHERE {
 							?leg a ocd:legislatura
 						} 
+							</code>
+						</div>
 					</section>
 					<section>
+						<div style="background-color: #E6B0AA; color: white; font-size: 14pt; text-align: left; padding: .25em">
+							<code>
 						<h3>Tutte le legislature per cui ci sono dati sulle votazioni</h3>
 						SELECT ?leg WHERE {
 							?votazione a ocd:votazione .
 							?votazione ocd:rif_leg ?leg
 						}
+							</code>
+						</div>
 					</section>
 					<section>
+						<div style="background-color: #E6B0AA; color: white; font-size: 14pt; text-align: left; padding: .25em">
+							<code>
 						<h3>Tutte le legislature per cui ci sono dati sulle votazioni</h3>
 						SELECT distinct ?leg WHERE {
 							?votazione a ocd:votazione .
 							?votazione ocd:rif_leg ?leg
 						}
+							</code>
+						</div>
 					</section>
 					<section>
+						<div style="background-color: #E6B0AA; color: white; font-size: 14pt; text-align: left; padding: .25em">
+							<code>
 						SELECT distinct * WHERE {
 							?votazione a ocd:votazione; 
 							dc:date ?data; 
@@ -335,6 +349,8 @@
 							ocd:rif_leg <http://dati.camera.it/ocd/legislatura.rdf/repubblica_17>
 						} 
 						ORDER BY DESC(?data)
+							</code>
+						</div>
 						</section>
 				</section>
 				<section class="slide level1">
