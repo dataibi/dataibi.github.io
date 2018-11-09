@@ -1,0 +1,487 @@
+<html>
+	<head> 
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">  
+		<style>
+			.reveal section img { background:none; border:none; box-shadow:none; }
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section id="what-is-git" class="titleslide slide level1" data-transition="slide">
+					<section>
+						<h1>SPARQL?</h1>
+					</section>
+					<section>
+						<div style="align-left">
+							<span style="font-size: 52pt;">S</span>PARQL<br />
+							<span style="font-size: 52pt;">P</span>rotocol<br />
+							<span style="font-size: 52pt;">A</span>nd<br />
+							<span style="font-size: 52pt;">R</span>DF<br />
+							<span style="font-size: 52pt;">Q</span>uery<br />
+							<span style="font-size: 52pt;">L</span>anguage<br />
+						</div>
+					</section>
+					<section>
+						<h3>Acronimi Ricorsivi</h3>
+						<ul>
+							<li>cURL — Curl URL Request Library</li>
+							<li>PHP — PHP: Hypertext Preprocessor</li>
+							<li>GNU - GNU's Not Unix</li>
+							<li>...</li>
+						</ul>
+						<br />
+						<a href="https://en.wikipedia.org/wiki/Recursive_acronym" target="_blank">Recursive Acronym</a>
+					</section>
+					<section>
+						<h3>SPARQL</h3> 
+						<h3>Solo un linguaggio di Query?</h3>
+					</section>
+					<section>
+						<p>Un Linguaggio di Query per grafi RDF <br /><span style="font-size: 14pt;">(SPARQL Query Language Specification)</span></p>
+						<p>Un protocollo per usare SPARQL via http <br /><span style="font-size: 14pt;">(SPARQL Protocol for RDF Specification)</span></p>
+						<p>Un formato di Output XML per le query SPARQL <br /><span style="font-size: 14pt;">(SPARQL Query XML Results Format)</span></p>
+					</section>
+					<section>
+						Useremo SPARQL per interrogare grafi di conoscenza ed estrarre informazioni
+					</section>
+					<section>
+						<h4>Ma i grafi di conoscenza esistono?</h4>
+						<img src="http://www.media.inaf.it/wp-content/uploads/2014/10/et-600x450-340x255.jpg" />
+					</section>
+					<section>
+						<img src="http://lod-cloud.net/versions/2017-08-22/lod.svg" />
+					</section>
+					<section>
+						<img src="http://lod-cloud.net/versions/2014-08-30/lod-cloud_colored.png" />
+					</section>
+					<section>
+						<h4>Esempi famosi</h4>
+						<p><a href="http://dbpedia.org/" target="_blank">DBpedia.org</a></p>
+						<p><a href="http://wikidata.org/" target="_blank">Wikidata</a></p>
+						<p><a href="http://linkedgeodata.org/" target="_blank">Linked GeoData</a></p>
+						<p><a href="http://www.europeana.eu" target="_blank">Europeana</a></p>
+						<p><a href="http://factforge.net" target="_blank">FactForge</a></p>
+					</section>
+					<section>
+						<h3>Le solite cose...</h3>
+					</section>
+					<section>
+						<h4>Ma anche</h4>
+						<p><a href="http://dati.camera.it/sparql">http://dati.camera.it/sparql</a></p>
+						<p>http://dati.culturaitalia.it</p>
+						<p>http://data.cnr.it/sparql</p>
+						<p>http://public-contracts.nexacenter.org</p>
+						<p>http://dati.cdec.it</p>
+						<p>http://linkedstat.spaziodati.eu</p>
+					</section>
+					<section>
+						<p>Quindi? dove trovo SPARQL endpoint?</p>
+						<ul>
+							<li><a href="http://lod-cloud.net" target="_blank">http://lod-cloud.net</a></li>		
+							<li>LOD datasets su DataHub: <br /><a href="https://datahub.io/organization/lodcloud">https://datahub.io/organization/lodcloud</a></li>
+							<li>SPARQLES <br /><a href="http://sparqles.ai.wu.ac.at/" target="_blank">http://sparqles.ai.wu.ac.at/</a></li> 
+						</ul>
+					</section>
+				</section>
+				<section class="slide level1">
+					<section class="slide level2">
+						<h2>RDF</h2>
+					</section>
+					<section class="slide level2">
+						<h2>Resource Description Framework</h2>
+					</section>
+					<section class="slide level2">
+						<h3>RDF</h3>
+						<p>Rappresentare la conoscenza</p>
+						<p>Soggetto -> Predicato -> Oggetto</p>
+					</section>
+					<section class="slide level2">
+						<h4>Esempio</h4>
+						<p>Plutone è stato scoperto nel 1930</p>
+						<img src="img/rdf1.png" />
+					</section>
+					<section>
+						<h4>I 4 principi dei Linked Data</h4>
+						<ol>
+							<li>Utilizzare URI (Uniform Resource Identifiers) per identificare entità</li>
+						<li>Usare HTTP URI in modo che le entità possano essere individuati da persone e da user agent (browser, programmi)</li>
+						<li>Fornire informazioni utili sull’oggetto quando qualcuno accede ad un URI usando formati standard come RDF, SPARQL</li>
+						<li>Includere collegamenti ad altri URI cosicché si possano scoprire maggiori informazioni</li>
+						</ol>
+					</section>
+					<section class="slide level2">
+						<img src="img/rdf5.png" />
+					</section>
+					<section class="slide level2">
+						<p>Come rappresento le triple nel computer</p>
+						<img src="img/rdf2.png" />
+					</section>
+					<section class="slide level2">
+						<img src="img/rdf10.png" />
+					</section>
+					<section class="slide level2">
+						<img src="img/rdf4.png" />
+					</section>
+					<section class="slide level2">
+						<img src="img/rdf11.png" />
+					</section>
+
+					<section class="slide level2">
+						<img src="img/rdf3.png" />
+					</section>
+					<section>
+						<div style="background-color: #E6B0AA; color: white; font-size: 12pt; text-align: left; padding: .25em">
+							<code>
+						&lt;http://dbpedia.org/resource/Pluto&gt; &lt;http://dbpedia.org/ontology/discovered&gt; “1930” .  <br />
+						&lt;http://dbpedia.org/resource/Pluto&gt; &lt;http://dbpedia.org/ontology/discoverer&gt; &lt;http://dbpedia.org/resource/Clyde_Tombaugh&gt; .
+							</code>
+						</div>
+					</section>
+					<section>
+						<div style="background-color: #E6B0AA; color: white; font-size: 14pt; text-align: left; padding: .25em">
+							<code>
+								PREFIX dbr:&lt;http://dbpedia.org/resource/&gt;<br/>
+								
+								PREFIX dbo:&lt;http://dbpedia.org/ontology/&gt;<br/><br/>
+								
+								dbr:Pluto dbo:discovered “1930” .  <br />
+								dbr:Pluto dbo:discoverer dbr:Clyde_Tombaugh; .
+							</code>
+						</div>
+					</section>
+					<section class="slide level2">
+						<h3>RDF Graph</h3>
+						<div style="background-color: #E6B0AA; color: white; font-size: 14pt; text-align: left; padding: .25em">
+							<code>
+							PREFIX dbpedia:&lt;http://dbpedia.org/resource/&gt;<br/>
+							PREFIX dbo:&lt;http://dbpedia.org/ontology/&gt;	<br/>
+							PREFIX dbprop:&lt;http://dbpedia.org/property/&gt;<br/>
+							PREFIX rdf:&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;	<br/><br/>
+								
+							dbpedia:Venezuela rdf:type dbo:Country .<br/>
+							dbpedia:Venezuela dbo:capital dbpedia:Caracas .<br/>
+							dbpedia:Venezuela dbo:language “Spanish“ .<br/>
+							dbpedia:Venezuela dbp:currencyCode "VEF" .</br>
+							dbpedia:Germany rdf:type dbo:Country .<br/>
+							dbpedia:Germany dbo:capital “Berlin“ .<br/>
+							dbpedia:Germany dbo:language “German“ .<br/>
+							</code>
+						</div>
+					</section>
+					<section>
+						SPARQL è basato su c.d. <i>Pattern Matching</i><br />o meglio<br/>
+						<i>Triple Pattern Matching</i> 
+					</section>
+					<section>
+						
+						?a rdf:type dbo:Country . <br/><br/>
+						
+						il <i>?</i> indica una variabile 
+						<br /><i>"a"</i> è il nome della variabile
+					</section>
+					<section>
+						
+						?pippo rdf:type dbo:Country . <br/><br/>
+						
+						?pluto rdf:type dbo:Country . <br/><br/>
+						
+						?paperino rdf:type dbo:Country . <br/><br/>
+						
+					</section>
+					<section>
+						Forse meglio:
+						
+						?nazione rdf:type dbo:Country .
+						
+					</section>
+					<section>
+						?nazione rdf:type dbo:Country .
+						
+						<div style="background-color: #E6B0AA; color: white; font-size: 14pt; text-align: left; padding: .25em">
+							<code>
+							dbpedia:Venezuela rdf:type dbo:Country .<br/>
+							dbpedia:Venezuela dbo:capital dbpedia:Caracas .<br/>
+							dbpedia:Venezuela dbo:language “Spanish“ .<br/>
+							dbpedia:Venezuela dbp:currencyCode "VEF" .</br>
+							dbpedia:Germany rdf:type dbo:Country .<br/>
+							dbpedia:Germany dbo:capital “Berlin“ .<br/>
+							dbpedia:Germany dbo:language “German“ .<br/>
+							</code>
+						</div>
+						<br/>
+				<b>?nazione</b> <br />è variabile -> libero -> non vincolato <br/><br/>
+				
+				<b>rdf:type dbo:Country</b><br />è fisso
+				
+					</section>
+					<section>
+						?nazione rdf:type dbo:Country .
+						
+						<div style="background-color: #E6B0AA; color: white; font-size: 14pt; text-align: left; padding: .25em">
+							<code>
+							dbpedia:Venezuela rdf:type dbo:Country .<br/>
+							dbpedia:Venezuela dbo:capital dbpedia:Caracas .<br/>
+							dbpedia:Venezuela dbo:language “Spanish“ .<br/>
+							dbpedia:Venezuela dbp:currencyCode "VEF" .</br>
+							dbpedia:Germany rdf:type dbo:Country .<br/>
+							dbpedia:Germany dbo:capital “Berlin“ .<br/>
+							dbpedia:Germany dbo:language “German“ .<br/>
+							</code>
+						</div>
+						<br/>
+						dbpedia:Venezuela<br />
+						dbpedia:Germany<br />
+			
+						o meglio<br/>
+			
+						<i>&lt;http://dbpedia.org/resource/Venezuela&gt;</i><br/>
+						<i>&lt;http://dbpedia.org/resource/Germany&gt;</i><br/>
+				
+					</section>
+					<section class="slide level2">
+						<img src="img/rdf6.png" />
+					</section>
+					<section>
+						<h4>Struttura query SPARQL</h4>
+						<div style="background-color: #E6B0AA; color: white; font-size: 14pt; text-align: left; padding: .25em">
+							<code>
+								# dichiarazione dei prefissi<br />
+								PREFIX ex: &lt;http://example.com/resources/&gt;<br />
+								...<br />
+								# grafo da interrogare<br />
+								FROM ...<br />
+								# definizione delle variabili<br />
+								SELECT ...<br />
+								# query<br />
+								WHERE {<br />
+								    ...<br />
+								}<br />
+								# modificatori<br />
+								ORDER BY ...<br />
+							</code>
+						</div>
+					</section>
+				</section>
+				
+				
+				<section>
+					<section>
+						<h3>Query Semplici</h3>
+					</section>
+					<section>
+						<h3>Query su DBpedia</h3>
+						<a href="http://dbpedia.org/sparql" target="_blank">http://dbpedia.org/sparql</a>
+					</section>
+					<section>
+						<div style="background-color: #E6B0AA; color: white; font-size: 14pt; text-align: left; padding: .25em">
+							<code>
+							PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; <br />
+							PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt; <br /><br />
+								
+							SELECT ?author  <br />
+							WHERE { <br />
+							       ?author rdf:type dbo:Writer . <br />
+							} LIMIT 1000 <br />
+							</code>
+						</div>
+					</section>
+					<section>
+						<div style="background-color: #E6B0AA; color: white; font-size: 14pt; text-align: left; padding: .25em">
+							<code>
+							PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; <br />
+							PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt; <br /><br />
+								
+							SELECT ?author ?work  <br />
+							WHERE { <br />
+							       ?author rdf:type dbo:Writer . <br />
+							       ?author dbo:notableWork ?work  <br />
+							} LIMIT 1000 <br />
+							</code>
+						</div>
+					</section>
+					<section>
+						<div style="background-color: #E6B0AA; color: white; font-size: 14pt; text-align: left; padding: .25em">
+							<code>
+							PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; <br />
+							PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt; <br /><br />
+								
+							SELECT ?author ?work  <br />
+							WHERE { <br />
+							       ?author rdf:type dbo:Writer . <br />
+							       OPTIONAL {?author dbo:notableWork ?work}  <br />
+							} LIMIT 1000 <br />
+							</code>
+						</div>
+					</section>
+					<section>
+						<h3>Query su LinkedGeoData</h3>
+						<a href="http://linkedgeodata.org/sparql" target="_blank">http://linkedgeodata.org/sparql</a>
+					</section>
+					<section>
+						<h3>Query su ISTAT</h3>
+						<a href="http://datiopen.istat.it/sparqlIstat.php" target="_blank">http://datiopen.istat.it/sparqlIstat.php</a>
+					</section>
+					<section>
+						<i>lasciamo perdere....</i>
+					</section>
+					<section>
+						<h3>Query su Camera dei Deputati</h3>
+						<a href="http://dati.camera.it/sparql" target="_blank">http://dati.camera.it/sparql</a>
+					</section>
+					<section>
+						<div style="background-color: #E6B0AA; color: white; font-size: 14pt; text-align: left; padding: .25em">
+							<code>
+						<h3>Tutte le legislature</h3>
+						SELECT ?leg WHERE {
+							?leg a ocd:legislatura
+						} 
+							</code>
+						</div>
+					</section>
+					<section>
+						<div style="background-color: #E6B0AA; color: white; font-size: 14pt; text-align: left; padding: .25em">
+							<code>
+						<h3>Tutte le legislature per cui ci sono dati sulle votazioni</h3>
+						SELECT ?leg WHERE {
+							?votazione a ocd:votazione .
+							?votazione ocd:rif_leg ?leg
+						}
+							</code>
+						</div>
+					</section>
+					<section>
+						<div style="background-color: #E6B0AA; color: white; font-size: 14pt; text-align: left; padding: .25em">
+							<code>
+						<h3>Tutte le legislature per cui ci sono dati sulle votazioni</h3>
+						SELECT distinct ?leg WHERE {
+							?votazione a ocd:votazione .
+							?votazione ocd:rif_leg ?leg
+						}
+							</code>
+						</div>
+					</section>
+					<section>
+						<div style="background-color: #E6B0AA; color: white; font-size: 14pt; text-align: left; padding: .25em">
+							<code>
+						SELECT distinct * WHERE {
+							?votazione a ocd:votazione; 
+							dc:date ?data; 
+							dc:title ?denominazione; 
+							dc:description ?descrizione;
+							ocd:votanti ?votanti;
+							ocd:rif_leg <http://dati.camera.it/ocd/legislatura.rdf/repubblica_17>
+						} 
+						ORDER BY DESC(?data)
+							</code>
+						</div>
+						</section>
+				</section>
+				<section class="slide level1">
+					<section>
+						<h3>Query Utili</h3>
+					</section>
+					<section>
+						<h3>Chiedere a uno SPARQL Endpoint quali RDF Graphs sono disponibili</h3>
+						<div style="background-color: #E6B0AA; color: white; font-size: 14pt; text-align: left; padding: .25em">
+							<code>
+								SELECT DISTINCT ?g
+								WHERE {
+									GRAPH ?g { ?s ?p ?o . }
+								}
+							</code>
+						</div>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Complichiamo un po' le cose</h3>
+					</section>
+					<section>
+						SELECT DISTINCT ?city ?cityLabel ?mayor ?mayorLabel WHERE {
+?city wdt:P31/wdt:P279* wd:Q515 . # find instances of subclasses of city
+ 
+ 
+ 
+ 
+ 
+ ?city p:P6 ?statement .
+?statement ps:P6 ?mayor .
+?mayor wdt:P21 wd:Q6581072 .
+FILTER NOT EXISTS { ?statement pq:P582 ?x } # but statement has no end date qualifier # Now select the population value of the ?city
+# (wdt: properties use only statements of "preferred" rank if any, meaning "current")
+?city
+					</section>
+					<section>
+						Q64 wdt:P625 ?berlinLoc . # Berlin coordinates SERVICE wikibase:around {
+?place wdt:P625 ?location .
+bd:serviceParam wikibase:center ?berlinLoc . bd:serviceParam wikibase:radius "100" . bd:serviceParam wikibase:distance ?dist.
+}
+?place wdt:P31/wdt:P279* wd:Q1248784 . # Is an airport } ORDER BY ASC(?dist)
+ 
+					</section>
+					<section>
+						SELECT ?item ?itemLabel ?billions 
+						WHERE { ?item wdt:P2218 ?worth. FILTER(?worth>1000000000). 
+						BIND(?worth/1000000000 AS ?billions). 
+						SERVICE wikibase:label {
+							bd:serviceParam wikibase:language "en". }}
+						ORDER BY DESC(?billions)
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Applicazioni</h1>
+					</section>
+					<section>
+						<h1>Google spreadsheet</h1>	
+						
+					=IMPORTDATA("http://factforge.net/repositories/ff-news?query=%23+F4%3A+Top-lev
+el+industries+by+number+of+companies%0A%23+-+benefits+from+the+mapping+a
+nd+consolidation+of+industry+classifications%0A%23+++and+predicates+in+DBPedi
+a+done+in+the+FactForge%0A%23+-+benefits+from+reasoning+-+transitive+and+s
+ymmetric+properties+across%0A%23+++the+industry+classification+taxonomy+of+
+FactForge%0A%0APREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%
+2F%3E%0APREFIX+ff-map%3A+%3Chttp%3A%2F%2Ffactforge.net%2Fff2016-mappin
+g%2F%3E%0A%0ASELECT+DISTINCT+%3Ftop_industry+(COUNT(*)+AS+%3Fcount)
+%0A%7B%0A+++%3Fcompany+dbo%3Aindustry+%3Findustry+.%0A+++%3Findust
+ry+%5Eff-map%3AindustryVariant+%2F+ff-map%3AindustryCenter+%3Ftop_industry
++.%0A%7D%0AGROUP+BY+%3Ftop_industry+ORDER+BY+DESC(%3Fcount)+")
+					</section>
+					<section>
+						<h1>cURL</h1>
+						curl -H Accept:text/tab-separated-values
+"http://factforge.net/repositories/ff-news?infer=true&sameAs=false&query=PREFIX+dbo%3
+A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0ASELECT+%3Findustry+%7B%24company+dbo
+%3Aindustry+%3Findustry%7D%0A&$company=<http://dbpedia.org/resource/Google>"
+					</section>
+				</section>
+				<section>
+					<section>e tanto altro ancora...</section>
+					<section>
+					Spraklis
+					
+					http://www.irisa.fr/LIS/ferre/sparklis/
+						
+					http://www.irisa.fr/LIS/ferre/sparklis/osparklis.html?endpoint=http%3A//dbpedia.org/sparql&regexp_hidden_URIs=%5E%28http%3A//www.w3.org/2002/07/owl%23%7Chttp%3A//www.openlinksw.com/%7CnodeID%3A//%7C%23%7Chttp%3A//www.wikidata.org/%29
+					</section>
+					<section>
+						NLquery
+						http://nlquery.ayoungprogrammer.com/
+						
+						Hokudai
+						http://wnews.ist.hokudai.ac.jp/wc3?search=Songs+written+by+Paul+McCartney
+						
+						Quepy
+						http://quepy.machinalis.com/
+					</section>
+				</section>
+			</div>
+		</div>
+		<script src="js/reveal.js"></script>
+		<script>
+			Reveal.initialize();
+		</script>
+	</body>
+</html>
