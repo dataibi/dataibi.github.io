@@ -16,12 +16,10 @@ format:
 
 ## Cosa è?
 
-::: {.incremental}
 - Significa cercare di pensare come un computer?
 - Sono le competenze necessarie per programmare computer? 
 - Coincide con il pensiero critico?
 - É il pensiero matematico?
-:::
 
 ## Definizione
 
