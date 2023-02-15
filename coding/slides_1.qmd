@@ -1,0 +1,169 @@
+---
+title: "Coding"
+subtitle: "Economia e management - Corso di Laurea magistrale"
+author: "Prof. Davide Taibi"
+format:
+  revealjs:
+    theme: moon
+    menu:
+      side: right
+      width: wide
+---
+
+## Davide Taibi
+
+::: {.incremental}
+- Ingegnere Informatico 
+- Primo Ricercatore presso l’Istituto per le Tecnologie Didattiche del Consiglio Nazionale delle Ricerche (CNR-ITD)
+- Applicazione delle tecnologie innovative nel campo della didattica: 
+    - Learning Analytics
+    - Smart Learning Environment
+    - Web Semantico & AI in Education
+- Professore a contratto  - Università degli studi di Palermo 
+:::
+
+## Contatti
+
+davide.taibi@itd.cnr.it
+
+d.taibi@lumsa.it
+
+Link MEET per le lezioni:	
+
+https://meet.google.com/fqn-ifpo-efz
+
+## Orari e Aule
+
+:::: {.columns}
+
+::: {.column width="40%"}
+Mercoledì
+
+14:00 - 15:30
+
+**Aula 9**
+
+---
+
+Giovedì
+
+08:30 - 10:00
+
+**Aula 11**
+
+---
+
+*Ricevimento:*
+
+Venerdì 
+
+14:00 - 16:00
+
+Online
+
+:::
+
+::: {.column width="20%"}
+
+:::
+
+::: {.column width="40%"}
+
+![](orario.png)
+
+:::
+
+::::
+
+[//]: #  Pausa tra il e il 3 
+
+## Libri di testo {.smaller}
+
+:::: {.columns}
+
+::: {.column width="100%"}
+
+- Jake VanderPlas, A Whirlwind Tour of Python, 2016, O'Reilly Media, Inc. ISBN: 9781491964644
+[Preview](https://jakevdp.github.io/WhirlwindTourOfPython/){preview-link="true"}
+
+- Igual L., Seguí S. Introduction to Data Science. A Python Approach to Concepts, Techniques and Applications. (2018) Springer International Publishing. ISBN 978-3-319-50016-4. [Notebook](https://github.com/DataScienceUB/introduction-datascience-python-book){preview-link="true"}
+
+- Jake VanderPlas, Python Data Science Handbook: Tools and Techniques for Developers: Essential Tools for working with Data (2016) O'Reilly Media, ISBN-13 978-1491912058 [Preview](https://jakevdp.github.io/PythonDataScienceHandbook/){preview-link="true"}
+
+- Yves J. Hilpisch, Python for Finance: Mastering Data-Driven Finance, (2019). Oreilly & Associates Inc. ISBN-13:  978-1492024330
+
+:::
+
+:::
+
+::: {layout-valign="top" layout-ncol=4}
+![](libro0.png){width=50%}
+
+![](libro1.png){width=50%}
+
+![](libro2.png){width=50%}
+
+![](libro3.jpg){width=50%}
+:::
+
+
+## 
+
+::: {.r-fit-text}
+Cosa è il Coding?
+:::
+
+## Argomenti del corso 
+
+Il Pensiero Computazionale, la logica e gli algoritmi
+
+Python
+
+Strumenti e librerie per la data science
+
+Apprendimento automatico
+
+Financial Data Science
+
+Casi di studio.
+
+## Esami 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+**SESSIONE ESTIVA**
+
+I APPELLO
+
+30/05/2023
+
+II APPELLO
+
+20/06/2023
+
+III APPELLO
+
+11/07/2023
+
+:::
+
+::: {.column width="50%"}
+
+**SESSIONE AUTUNNALE**
+
+I APPELLO
+
+01/09/2023
+
+II APPELLO
+
+22/09/2023
+
+:::
+
+::::
+
+## Slide Title {background-color="#2596be"}
+## Slide Title {background-color="#4F81BD"}

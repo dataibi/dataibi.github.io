@@ -1,0 +1,214 @@
+---
+title: "Coding"
+subtitle: "Economia e management - Corso di Laurea magistrale"
+author: "Prof. Davide Taibi"
+format:
+  revealjs:
+    navigation-mode: vertical
+    reference-location: document
+    theme: sky
+    menu:
+      side: right
+      width: wide
+---
+
+# Computational Thinking
+
+## Cosa è?
+
+- Significa cercare di pensare come un computer?
+- Sono le competenze necessarie per programmare computer? 
+- Coincide con il pensiero critico?
+- É il pensiero matematico?
+
+## Definizione
+
+- Jeannette Wing ^[Wing, J. M. (2006). Computational thinking. Communications of the ACM, 49(3), 33-35.] afferma che il
+*“Computational thinking involves solving problems, designing systems, and understanding human behavior, by drawing on the concepts fundamental to computer science.”*
+
+
+
+- Il Computational Thinking non è direttamente collegato alla *‘computer science’* e rappresenta invece un modo di pensare che è fondamentale per tutti e applicabile in un vasto insieme di domini. 
+
+
+## Concetti e pratiche
+
+1. *I concetti del Computational Thinking* includono la logica e il pensiero logico, gli algoritmi e il pensiero algoritmico, il riconoscimento di pattern, l'astrazione e la generalizzazione; 
+2. *Le pratiche del Computational Thinking* includono la scomposizione dei problemi, la creazione di *computational artefacts*, testing e debugging, raffinamento iterativo (sviluppo incrementale), collaborazione e creatività. 
+
+## Livelli del Computational Thinking
+
+![](CT_levels.jpg)
+
+::: aside
+*Berikan, B., & Özdemir, S. (2020). Investigating “Problem-Solving With Datasets” as an Implementation of Computational Thinking: A Literature Review. Journal of Educational Computing Research, 58(2), 502–534. https://doi.org/10.1177/0735633119845694*
+:::
+
+## Livelli del Computational Thinking
+
+- La Figura illustra che il Computational Thinking è metodo scientifico che beneficia del calcolo automatico. 
+
+- In primo luogo, deve essere identificato un problema scientifico per il quale la capacità di calcolo può essere applicabile. 
+
+- Dopo avere identificato il problema, occorre pensare algoritmicamente e produrre astrazioni per formulare un approccio alla soluzione che possa essere eseguito da un computer. 
+
+- A livello automazione, le loro competenze tecniche vengono messe in pratica per rendere le soluzioni comprensibili a un computer.
+
+## Concetti fondamentali {visibility="hidden"} 
+
+- Sequenza: una serie di azioni in un ordine predeterminato;
+
+- Loop: una sequenza di istruzioni che viene ripetuta finché non viene soddisfatta una specifica condizione;
+
+- Condizione: regole che specificano quale sequenza di istruzioni eseguire;
+
+## Concetti fondamentali {visibility="hidden"} 
+
+- Eventi: occorrenze rilevate da un programma che possono attivare l'esecuzione di passaggi successivi;
+
+- Parallelismo: eventi che si svolgono contemporaneamente;
+
+- Operatori: costrutti che si comportano come funzioni per manipolare i dati ma sono espressi semanticamente;
+
+- Dati: le informazioni elaborate o archiviate digitalmente possono essere rappresentate da dati binari, numeri, testo, immagini, audio, video, programmi o altri tipi di dati.
+
+## Concetti fondamentali 
+
+Le abilità del Computational Thinking, quelle di programmazione e di risoluzione dei problemi sono strettamente correlate.
+
+Il pensiero computazionale è una forma di pensiero analitico. 
+
+- Condivide con il pensiero matematico il modo di affrontare la soluzione di un problema. 
+
+- Condivide con il pensiero ingegneristico il modo di progettare e valutare sistemi complessi. 
+
+## Concetti fondamentali 
+
+Nessuno afferma che questo modo di pensare sia quello giusto. Tuttavia, offre uno strumento complementare per descrivere la realtà^[Nardelli, E. (2019). Do we really need computational thinking?. Communications of the ACM, 62(2), 32-35.].
+
+## Definizione
+
+Sebbene non esista una definizione universalmente accettata di Computational Thinking, esso è generalmente visto come una competenza legata alla risoluzione di problemi, che richiede:
+
+- abilità cognitive come astrazione, scomposizione dei problemi, pianificazione, test e debugging
+- abilità non cognitive come creatività, comunicazione e collaborazione
+
+Le skills richieste per il Computational Thinking non sono le stesse di quelle richiese dalla programmazione, ma saper programmare è un facilitatore per sviluppare le capacità di pensare in modo computazionale.
+
+## Computational Thinking - measure
+
+- Creativity
+
+- Algoritmic thinking
+
+- Cooperativity
+
+- Critical thinking
+
+- Problem solving
+
+[Questionario](https://forms.gle/gDrmpZKjiX3dMN1h9){preview-link="true"} 
+
+::: aside
+Korkmaz, Ö., Çakir, R., & Özden, M. Y. (2017). A validity and reliability study of the computational thinking scales (CTS). Computers in human behavior, 72, 558-569.
+:::
+
+## Concetti di base
+
+- Decomposition: scomposizione di un problema (o di  sistema complesso) in parti più piccole e più gestibili
+
+- Pattern Recognition: ricerca di similitudini tra e all'interno dei problemi
+
+- Abstraction: focalizzarsi solo sulle informazioni importanti, ignorando i dettagli irrilevanti
+
+- Algorithm: sviluppare una soluzione o i passi da seguire per risolvere un problema 
+
+::: aside
+Shah, V. (2019). CSpathshala: bringing computational thinking to schools. Communications of the ACM, 62(11), 54-55.
+::: 
+
+# Algoritmi
+
+La parola algoritmo deriva dal nome di *"al-Khwarizmi"*, un matematico arabo del IX secolo.
+
+Possiamo definire un algoritmo come *"una successione finita di istruzioni per risolvere un problema, cioè per ottenere un preciso risultato a partire da un certo numero di dati iniziali."*
+
+## Diagrammi di Flusso (Flow charts)
+
+- In informatica il diagramma di flusso è una rappresentazione grafica delle operazioni da eseguire per l'esecuzione di un algoritmo. 
+
+- Ogni singolo passo è visualizzato tramite una serie di simboli standard.
+
+## Diagrammi di Flusso (Flow charts)
+
+|  | Elemento Grafico |
+|---------|-----:|
+| Inzio/Fine    | ![](Inizio.gif)   |
+| Istruzione    | ![](Processo.gif)  |
+| Decisione     | ![](Decisione.gif)   |
+| Input/Output     | ![](Dati.gif)   |
+
+## Diagrammi di Flusso - Esempi
+
+![](flowchart-algorithm2.png){fig-align="center"}
+
+## Diagrammi di Flusso - Esempi
+
+![](flowchart-algorithm.png){fig-align="center"}
+
+## Pseudo code
+
+Lo pseudocodice indica un linguaggio che ci permette di descrivere programmi usando una sintassi naturale, umana, senza le rigide regole di un linguaggio di programmazione.
+
+
+## Linguaggi di programmazione
+
+Ogni algoritmo è scritto in un linguaggio specifico. Usiamo tale linguaggio per comunicare le istruzioni definite dall'algoritmo a un computer (umano o macchina) per ottenere qualcosa elaborando del materiale di input.
+
+## Teorema di Böhm-Jacopini
+
+Nel 1966 due informatici italiani hanno enunciato il seguente teorema: *Un qualsiasi algoritmo può essere espresso usando esclusivamente le strutture di sequenza, di alternativa e di ripetizione.* 
+
+## Sequenza
+
+![](sequenza.gif)
+
+## Selezione
+
+![](selezione.gif)
+
+## Iterazione
+
+![](iterazione.gif)
+
+## Paradigmi di programmazione {visibility="hidden"} 
+
+
+## Programmazione Strutturata {.smaller}
+
+In informatica la programmazione strutturata è un paradigma di programmazione emerso fra gli anni sessanta e gli anni settanta.
+
+Le strutture di controllo ammesse dai linguaggi strutturati, e le regole sintattiche e semantiche possono variare tuttavia, devono essere rispettati i seguenti requisiti fondamentali:
+
+- completezza. Un linguaggio strutturato deve supportare la sequenza, una struttura di tipo alternativa, e una struttura di tipo iterativa;
+
+- un singolo punto di ingresso e di uscita. 
+
+- componibilità. le strutture di controllo si possono combinare tra loro.
+
+## Programmazione a oggetti {visibility="hidden"} 
+
+In informatica, la programmazione orientata agli oggetti (in inglese object-oriented programming, in acronimo OOP), a volte chiamata semplicemente programmazione ad oggetti, è un paradigma di programmazione che permette di definire oggetti software in grado di interagire gli uni con gli altri attraverso lo scambio di messaggi.
+
+Tra gli altri vantaggi della programmazione orientata agli oggetti:
+
+essa fornisce un supporto naturale alla modellazione software degli oggetti del mondo reale o del modello astratto da riprodurre;
+permette una più facile gestione e manutenzione di progetti di grandi dimensioni;
+l'organizzazione del codice sotto forma di classi favorisce la modularità e il riuso di codice.
+
+# Programming is dead
+[Welsh, M. (2023). The End of Programming. Communications of the ACM, 66(1), 34-35.](https://cacm.acm.org/magazines/2023/1/267976-the-end-of-programming/fulltext){preview-link="true"}
+
+ [Video](https://vimeo.com/775827887){preview-link="true"} 
+
+![](santiago.jpg)
