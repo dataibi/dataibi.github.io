@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html ng-app="custom-webapp-ui" lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Scala di Valutazione della Sessione</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        .custom-block {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .custom-block p {
+            margin-bottom: 10px;
+        }
+
+        tr {
+            font-size: 12px;
+            text-align: center;
+        }
+
+        td:nth-child(2) {
+            width: 40%;
+        }
+
+        @media (max-width: 767px) {
+            .custom-block {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body ng-app="custom-webapp-ui" ng-controller="CustomUIController">
+
+<div class="container-fluid">
+    <!-- ✅ Introduzione aggiunta -->
+    <div class="container-question">
+        <div class="question-title-container p-3 mb-4 text-white bg-dark rounded">
+            <h5 class="mb-3">Scala di Valutazione della Sessione</h5>
+            <p>Valuta la sessione di oggi posizionando lo slider nel modo che descrive meglio la tua esperienza.</p>
+        </div>
+    </div>
+
+    <table class="table">
+        <tbody>
+            <!-- Relazioni -->
+            <tr>
+                <th scope="col" colspan="3" class="text-center">Relazioni:</th>
+            </tr>
+            <tr>
+                <td>Non mi sono sentito ascoltato, capito e rispettato</td>
+                <td>
+                    <div class="custom-block">
+                        <input type="range" class="form-control-range" id="srs_01" name="srs_01" min="0" max="50" step="0.01" ng-model="scalaValutazione[0].value">
+                    </div>
+                </td>
+                <td>Mi sono sentito ascoltato, capito e rispettato</td>
+            </tr>
+
+            <!-- Obiettivi e Argomenti -->
+            <tr>
+                <th scope="col" colspan="3" class="text-center">Obiettivi e Argomenti:</th>
+            </tr>
+            <tr>
+                <td>Non abbiamo affrontato ciò su cui desideravo lavorare o discutere</td>
+                <td>
+                    <div class="custom-block">
+                        <input type="range" class="form-control-range" id="srs_02" name="srs_02" min="0" max="50" step="0.01" ng-model="scalaValutazione[1].value">
+                    </div>
+                </td>
+                <td>Abbiamo discusso e lavorato su ciò che desideravo approfondire</td>
+            </tr>
+
+            <!-- Approccio e Metodo -->
+            <tr>
+                <th scope="col" colspan="3" class="text-center">Approccio e Metodo:</th>
+            </tr>
+            <tr>
+                <td>L'approccio del terapeuta non è adatto alle mie esigenze</td>
+                <td>
+                    <div class="custom-block">
+                        <input type="range" class="form-control-range" id="srs_03" name="srs_03" min="0" max="50" step="0.01" ng-model="scalaValutazione[2].value">
+                    </div>
+                </td>
+                <td>L'approccio del terapeuta risponde alle mie esigenze</td>
+            </tr>
+
+            <!-- Complessivamente -->
+            <tr>
+                <th scope="col" colspan="3" class="text-center">Complessivamente:</th>
+            </tr>
+            <tr>
+                <td>Ho percepito che mancava qualcosa nella sessione di oggi</td>
+                <td>
+                    <div class="custom-block">
+                        <input type="range" class="form-control-range" id="srs_04" name="srs_04" min="0" max="50" step="0.01" ng-model="scalaValutazione[3].value">
+                    </div>
+                </td>
+                <td>Nel complesso, la sessione di oggi è stata adatta a me</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary">Invia</button>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    angular.module("custom-webapp-ui", []).controller('CustomUIController', function ($scope) {
+        $scope.scalaValutazione = [
+                { name: "SRS_01", value: 25 },
+                { name: "SRS_02", value: 25 },
+                { name: "SRS_03", value: 25 },
+                { name: "SRS_04", value: 25 }
+        ];
+    });
+</script>
+
+</body>
+</html>
