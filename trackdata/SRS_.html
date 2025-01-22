@@ -107,9 +107,6 @@
         </tbody>
     </table>
 
-    <div class="text-center">
-        <button type="submit" class="btn btn-primary">Invia</button>
-    </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -123,6 +120,19 @@
                 { name: "SRS_03", value: 25 },
                 { name: "SRS_04", value: 25 }
         ];
+
+        const mainButton = window.Telegram.WebApp.MainButton;
+            mainButton.text = "Salva Preferenze";
+            mainButton.enable();
+            mainButton.show();
+
+            mainButton.onClick(function () {
+                window.Telegram.WebApp.sendData(JSON.stringify($scope.scalaValutazione));
+            });
+
+            $scope.conferma = function () {
+                console.log("Dati confermati:", $scope.scalaValutazione);
+            };
     });
 </script>
 
