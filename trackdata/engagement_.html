@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html ng-app="custom-webapp-ui" lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <title>Sondaggio Esperienza in Classe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container-question {
+            max-width: 800px;
+            margin: 0 auto;  
+        }
+
+        .question-title-container {
+            border: 2px solid #354151; 
+            border-radius: 8px;
+            margin: 20px 0; 
+            padding: 15px;
+            background-color: #354151;
+            color: white;
+        }
+
+        .question-block {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            margin: 20px 0;
+        }
+
+        .answer-options {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .answer-options li {
+            padding: 8px 0;
+        }
+
+        .question-text {
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body ng-app="custom-webapp-ui" ng-controller="CustomUIController">
+
+<div class="container mt-4">
+    <div id="questionnaire" class="row">
+        <div class="container-question">
+            <div class="question-title-container">
+                <div class="d-flex align-items-center">
+                    <div class="question-text">
+                        Quanto sei d’accordo che le seguenti affermazioni descrivano la tua esperienza in classe in questo semestre?
+                    </div>
+                </div>
+            </div>
+
+            <form id="surveyForm" action="#">
+                <div id="questionsContainer"></div>
+
+                
+                <!--
+                utilizzato per fare le prove ma Telegram ha il suo
+                
+                <div class="text-center">
+                    <button type="submit" id="submit-button" class="btn btn-primary">Invia</button>
+                </div>
+                -->
+                
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+const questionsArray = [
+    { code: 'af1', text: 'Mi diverto a imparare cose nuove in classe' },
+    { code: 'af2', text: 'Mi piace quello che sto imparando a scuola' },
+    
+    { code: 'af3', text: 'Penso che ciò che impariamo a scuola sia interessante' },
+    { code: 'af4', text: 'Sono felice di stare in questa scuola' },
+    { code: 'af5', text: 'In genere non vedo l’ora di andare a scuola' },
+    { code: 'af6', text: 'La mia scuola mi piace' },
+    { code: 'af7', text: 'Sono fiero di essere uno studente di questa scuola' },
+    { code: 'af8', text: 'Sono molto interessato a imparare' },
+    { code: 'af9', text: 'Penso che studiare sia noioso' },
+    { code: 'be1', text: 'Se faccio fatica a capire una cosa, mi sforzo finché non ce l’ho fatta' },
+    { code: 'be2', text: 'A scuola faccio il minimo per andare avanti' },
+    { code: 'be3', text: 'Partecipo attivamente alle attività extra scolastiche' },
+    { code: 'be4', text: 'Quando sono in classe faccio solo finta di lavorare' },
+    { code: 'be5', text: 'Quando faccio i compiti, se incontro una difficoltà continuo a lavorare finché non l’ho superata' },
+    { code: 'be6', text: 'Mi offro volontario per aiutare nell’organizzazione di attività extra scolastiche' },
+    { code: 'be7', text: 'Mi impegno molto per andare bene a scuola' },
+    { code: 'be8', text: 'Quando sono in classe, partecipo alle attività' },
+    { code: 'be9', text: 'Quando sono in classe mi distraggo' },
+    { code: 'be10', text: 'In classe, mi impegno il più possibile' },
+    { code: 'be11', text: 'In classe presto attenzione' },
+    { code: 'be12', text: 'Ho un ruolo attivo nelle attività extrascolastiche della mia scuola' },
+    { code: 'co1', text: 'Quando studio, cerco di collegare le cose che sto imparando alle mie esperienze' },
+    { code: 'co2', text: 'Cerco di vedere se quello che studio ha qualcosa in comune con le cose che so già' },
+    { code: 'co3', text: 'Per capire meglio alcuni concetti, provo a trovare degli esempi miei' },
+    { code: 'ag1new', text: 'Difendo le mie opinioni anche se non sono in linea con quelle dei miei compagni' },
+    { code: 'con1', text: 'Seleziona la risposta "Fortemente in disaccordo"' }, 
+    { code: 'con2', text: 'Seleziona la risposta "Completamente in accordo"' }  
+];
+
+function shuffleArray(array) {
+    return array.sort(() => Math.random() - 0.5);
+}
+
+function generateQuestions() {
+    const shuffledQuestions = shuffleArray([...questionsArray]);
+    const container = document.getElementById('questionsContainer');
+
+    shuffledQuestions.forEach((question) => {
+        const questionBlock = document.createElement('div');
+        questionBlock.className = 'question-block';
+
+        const questionText = document.createElement('div');
+        questionText.className = 'question-text mb-3';
+        questionText.innerText = question.text;
+
+        const answerList = document.createElement('ul');
+        answerList.className = 'answer-options';
+
+        for (let i = 1; i <= 7; i++) {
+            const listItem = document.createElement('li');
+            const input = document.createElement('input');
+            const label = document.createElement('label');
+
+            const inputId = `${question.code}_${i}`;
+
+            input.type = 'radio';
+            input.name = question.code;
+            input.id = inputId;
+            input.value = i;
+            if (i === 1) input.required = true;
+
+            label.setAttribute('for', inputId);
+            label.innerText = [
+                "Completamente in disaccordo",
+                "Fortemente in disaccordo",
+                "Un po' in disaccordo",
+                "Né in disaccordo né in accordo",
+                "Piuttosto in accordo",
+                "Fortemente in accordo",
+                "Completamente in accordo"
+            ][i - 1];
+
+            listItem.appendChild(input);
+            listItem.appendChild(label);
+            answerList.appendChild(listItem);
+        }
+
+        questionBlock.appendChild(questionText);
+        questionBlock.appendChild(answerList);
+        container.appendChild(questionBlock);
+    });
+}
+
+window.onload = generateQuestions;
+
+/*
+usando il submit button del form funziona
+
+$(document).ready(function() {
+    $("#submit-button").click(function(){
+        let radioArray = [];
+
+              $("form input[type='radio']:checked").each(function () {
+                  radioArray.push({
+                    name: $(this).attr("name"),
+                    value: $(this).val()
+                });
+              });
+
+        console.log(radioArray);
+    }); 
+});
+*/
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+
+    <script>
+        const tele = window.Telegram.WebApp;
+        tele.expand();
+        angular.module("custom-webapp-ui", []).controller('CustomUIController', function ($scope) {
+            /*
+            $scope.scalaValutazione = [
+                { name: "Risposta 1 ", value: 25 },
+                { name: "Risposta 2 ", value: 25 },
+                { name: "Risposta 3 ", value: 25 },
+                { name: "Risposta 4 ", value: 25 }
+            ];*/
+
+            const mainButton = window.Telegram.WebApp.MainButton;
+            mainButton.text = "Salva Preferenze";
+            mainButton.enable();
+            mainButton.show();
+
+            mainButton.onClick(function () {
+
+                let allAnswered = true;
+
+                $(".question-block").each(function () {
+                    const questionBlock = $(this);
+                    const questionName = questionBlock.find("input[type='radio']").first().attr("name");
+
+                    questionBlock.find(".error-message").remove();
+
+                    if ($(`input[name='${questionName}']:checked`).length === 0) {
+                        allAnswered = false;
+                        questionBlock.addClass("error");
+
+                        questionBlock.append("<div class='error-message' style='color: red; margin-top: 5px;'>Per favore seleziona una risposta</div>");
+                    } else {
+                        questionBlock.removeClass("error");
+                    }
+                });
+
+                if (!allAnswered) {
+                    //alert("Rispondi a tutte le domande prima di inviare.");
+                    event.preventDefault();
+                }else {
+              
+                    let radioArray = [];
+
+                    $("form input[type='radio']:checked").each(function () {
+                        radioArray.push({
+                            name: $(this).attr("name"),
+                            value: $(this).val()
+                        });
+                    });
+
+                    
+                    window.Telegram.WebApp.sendData(JSON.stringify(radioArray));
+                }
+            });
+
+            $scope.conferma = function () {
+              
+                console.log("Dati confermati:", $scope.scalaValutazione);
+            };
+
+        });
+    </script>
+</body>
+</html>
