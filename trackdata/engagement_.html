@@ -227,10 +227,10 @@ $(document).ready(function() {
                 });
 
                 if (!allAnswered) {
-                    //alert("Rispondi a tutte le domande prima di inviare.");
+                    alert("Rispondi a tutte le domande prima di inviare.");
                     event.preventDefault();
                 }else {
-              
+                    alert("Tutte le risposte sono complete -> invio");
                     let radioArray = [];
 
                     $("form input[type='radio']:checked").each(function () {
